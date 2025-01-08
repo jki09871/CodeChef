@@ -3728,20 +3728,6 @@ DB를 직접 조회하는 방식에서 Redis의 Sorted Set과 캐싱을 사용�
 
 ---
 
-## 역할 분담 및 협업 방식
-
-### **Detail Role**
-
-| 이름   | 포지션   | 담당(개인별 기여점)                                                                                                            | Github 링크                       |
-|--------|----------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
-| 송민준 | 리더     | ▶ **ELK 스택**  <br> - [Elasticsearch] 제목&내용&카테고리별 게시글 검색 <br> - [Logstash] SearchService 로그 Elasticsearch에 저장 <br> - [Kibana] Elasticsearch 시각화 & 실시간 인기 검색어 랭킹 Top10(검색 횟수 내림차순) <br> ▶ **인덱싱 (레거시)** <br> - 게시글 부분인덱싱 <br> - 인덱스 검색 성능 테스트 <br> ▶ **댓글 CRUD** <br> - 댓글 CRUD <br> - 댓글 채택 <br> ▶ **카테고리 CRUD** <br> - 게시글 [프레임워크, 언어] CUD <br> - 유저 중간테이블 [프레임워크, 언어] CRD | [🍁 깃헙링크](https://github.com/Luta13) |
-| 강이원 | 부리더   | ▶ **로그인/회원가입** <br> - Auth(user)-service CRUD <br> - JWT와 Spring Security를 이용한 보안 설정 <br> - Redis를 이용한 Refresh Token 구현 <br> ▶ **user 권한, 경고 구현** <br> - 관리자: 광고성, 코드리뷰 외 잡담 글 경고 부여 <br> - 경고 횟수: 계정 BLOCK 처리 <br> ▶ **Redis Sentinel 적용** <br> - Redis 초기 설정 및 연결 테스트 <br> - Redis master-slave 구조 및 Sentinel 구축 <br> ▶ **RabbitMQ 적용** <br> - RabbitMQ 초기 설정 및 연결 테스트 <br> ▶ **배포 및 CI/CD** <br> - docker-compose 파일, dockerfile 작성 <br> - EC2를 통한 서비스 배포 <br> - Docker Hub에 도커 이미지 업로드 <br> - GitHub Actions를 통한 CI/CD 설정 <br> ▶ **실시간 게시물 랭킹 조회** <br> - Redis Sort Set을 이용해 랭킹 관리 <br> - 스케줄러 <br> - 1시간 간격으로 Redis 캐시 초기화 <br> - **캐싱** <br> - Redis 캐싱을 통한 성능 최적화 <br> - Cacheable을 이용한 캐싱 <br> ▶ **실시간 알림 기능** <br> - 알림 전송 및 읽음 처리, 알람 조회, 읽지 않은 알람만 조회 기능 구현 <br> - 댓글 작성 시 해당 게시글 작성자에게 알림 전송 <br> - 이벤트 발생 시 알림 전송 <br> - Slack (최종) <br> - RabbitMQ + Websocket (최종) | [🍁 깃헙링크](https://github.com/KangIWon) |
-| 홍정기 | 팀원     | ▶ **게시물 작성 CRUD** <br> ▶ **이벤트 기능** <br> - 동시성 제어 방식의 발전 과정 및 성능 분석 <br> - 최종: 분산락 사용 <br> ▶ **인프라 CI/CD (리팩토링)** <br> - 한 서버에 통합되었던 Elasticsearch, Redis, RabbitMQ를 분산 배치 | [🍁 깃헙링크](https://github.com/jki09871) |
-| 나민수 | 팀원     | ▶ **포인트** <br> - 포인트 지급, 포인트 차감, 포인트 조회 <br> ▶ **포인트 랭킹 (Redis SortedSet, 캐싱)** <br> - 실시간 유저 랭킹 (현업자, 비현업자) <br> - 지난달 유저 랭킹 (현업자, 비현업자) <br> ▶ **CloudFront** <br> - 첨부파일을 S3에 저장 후 CloudFront로 반환 <br> ▶ **결제** <br> - 구독 결제 & 환불 | [🍁 깃헙링크](https://github.com/minsoo-hub) |
-| 강민주 | 팀원     | ▶ **첨부파일 CRUD** <br> - S3 Bucket <br> ▶ **실시간 채팅** <br> - 프로토콜: WebSocket, STOMP <br> - 메시지 브로커: RabbitMQ <br> - 메세징 패턴: Pub/Sub <br> - DB: Redis | [🍁 깃헙링크](https://github.com/MinjuKang727) |
-
----
-
 ## 성과 및 회고
 
 ### 잘된 점
